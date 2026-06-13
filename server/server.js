@@ -1,9 +1,11 @@
 import express from 'express'
+import aitoolsRouter from './routes/aitools.js'
 const app = express()
 
 // MiddleWare
 app.use('/public', express.static('./public'))
 app.use('/scripts', express.static('./public/scripts'))
+app.use('/aitools', aitoolsRouter)
 
 // Home Routes
 app.get('/', (req, res) => {
